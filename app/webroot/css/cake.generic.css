@@ -758,3 +758,7 @@ form div.submit {
   height: 36px;
   width: 76px;
 }
+
+#login-title {
+  color: black;
+}

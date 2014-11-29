@@ -10,6 +10,7 @@
  */
 ?>
 <div class="users index">
+	<h2 id="login-title">SFSU CakePHP User Management Web App</h2>
 	<h2><?php echo __d('users', 'Login'); ?></h2>
 	<?php echo $this->Session->flash('auth');?>
 	<fieldset>
