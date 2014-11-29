@@ -166,7 +166,6 @@ class UsersController extends UsersAppController {
 				case 'index':
 				case 'dashboard':
 				case 'search':
-				case 'request_password_change':
 				case 'resend_verification':
 					$this->Session->setFlash(__d('users', 'You are not authorized to access that location.'));
 					$this->redirect(array('action' => 'admin_index'));
@@ -237,7 +236,7 @@ class UsersController extends UsersAppController {
 			return;
 		}
 
-		$this->Auth->allow('add', 'reset', 'verify', 'logout', 'view', 'reset_password', 'login', 'resend_verification');
+		$this->Auth->allow('add', 'reset', 'verify', 'logout', 'view', 'reset_password', 'login');
 
 		if (!is_null(Configure::read('Users.allowRegistration')) && !Configure::read('Users.allowRegistration')) {
 			$this->Auth->deny('add');
