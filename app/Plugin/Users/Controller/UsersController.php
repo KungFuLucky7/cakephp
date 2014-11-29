@@ -161,12 +161,13 @@ class UsersController extends UsersAppController {
 	  if (!$this->Session->read('Auth.User.is_admin') && ($this->Session->check('Auth.User.role') && $this->Session->read('Auth.User.role') !== 'admin') && isset($this->params['action'])) {
 			switch ($this->params['action']) {
 				case 'admin_add':
-		    case 'admin_view':
-		    case 'admin_edit':
-				case 'index':
+				case 'admin_edit':
+				case 'admin_view':
 				case 'dashboard':
-				case 'search':
+				case 'index':
 				case 'resend_verification':
+				case 'reset_password':
+				case 'search':
 					$this->Session->setFlash(__d('users', 'You are not authorized to access that location.'));
 					$this->redirect(array('action' => 'admin_index'));
 					break;
