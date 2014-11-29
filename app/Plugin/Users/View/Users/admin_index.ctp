@@ -65,7 +65,6 @@
 								}
 								else {
 									echo $this->Html->link(__d('users', 'View'), array('action' => 'view', $user[$model]['id']));
-									echo $this->Html->link(__d('users', 'Edit'), array('action' => 'edit', $user[$model]['id'])); 
 								}
 					?>
 				</td>
