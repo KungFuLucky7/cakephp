@@ -165,6 +165,7 @@ class UsersController extends UsersAppController {
 				case 'admin_view':
 				case 'dashboard':
 				case 'index':
+				case 'login':
 				case 'resend_verification':
 				case 'reset_password':
 				case 'search':

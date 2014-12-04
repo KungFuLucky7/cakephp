@@ -27,8 +27,8 @@
 	//Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
 	//Router::connect('/', array('controller' => 'posts', 'action' => 'index'));
 	//Redirect homepage to Users plugin
-	Router::connect('/', array('plugin' => 'users', 'controller' => 'users', 'action' => 'admin_index'));
-	Router::connect('/users', array('plugin' => 'users', 'controller' => 'users', 'action' => 'admin_index'));
+	Router::connect('/', array('plugin' => 'users', 'controller' => 'users', 'action' => 'login'));
+	Router::connect('/users', array('plugin' => 'users', 'controller' => 'users', 'action' => 'login'));
 
 /**
  * ...and connect the rest of 'Pages' controller's URLs.
