@@ -112,6 +112,7 @@ CakePlugin::load('Users', array(
 ));
 Configure::write('Users.roles', array(
     'admin' => 'Admin',
+    'instructor' => 'Instructor',
     'registered' => 'Registered'
 ));
 Configure::write('Users.defaultRole', 'registered');

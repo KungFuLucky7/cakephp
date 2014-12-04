@@ -49,7 +49,7 @@
 		?>
 	</dl><br /><br />
 	<div class="submit">
-		<?php echo '<input id="back-button" type="button" value="Back" onClick="window.location.href=\'' . $this->webroot . '\'">' ?>
+		<?php echo '<input id="back-button" type="button" value="Back" onClick="window.location.href=\'' . $this->webroot . 'users/admin_index\'">' ?>
 	</div>
 </div>
 <?php echo $this->element('Users.Users/sidebar'); ?>

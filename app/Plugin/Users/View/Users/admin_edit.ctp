@@ -27,9 +27,11 @@
 					echo $this->Form->input('role', array(
 						'label' => __d('users', 'Role'), 'values' => $roles));
 				}
-				echo $this->Form->input('is_admin', array(
+				if ($this->Session->read('Auth.User.is_admin')) {
+					echo $this->Form->input('is_admin', array(
 						'label' => __d('users', 'Is Admin')));
-					echo $this->Form->input('active', array(
+				}
+				echo $this->Form->input('active', array(
 						'label' => __d('users', 'Active')));
 			?>
 			<p><br />

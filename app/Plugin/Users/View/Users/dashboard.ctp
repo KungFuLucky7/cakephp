@@ -11,5 +11,41 @@
 ?>
 <div class="users overview">
 	<h2><?php echo __d('users', 'Welcome'); ?> <?php echo $user[$model]['username']; ?></h2>
-	<h3><?php echo __d('users', 'Recent broadcasts'); ?></h3>
+		<dl><?php $i = 0; $class = ' class="altrow"';?>
+			<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Username'); ?></dt>
+			<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
+				<?php echo $user[$model]['username']; ?>
+				&nbsp;
+			</dd>
+			<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Email'); ?></dt>
+			<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
+				<?php echo $user[$model]['email']; ?>
+				&nbsp;
+			</dd>
+			<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Created'); ?></dt>
+			<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
+				<?php echo $user[$model]['created']; ?>
+				&nbsp;
+			</dd>
+			<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Modified'); ?></dt>
+			<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
+				<?php echo $user[$model]['modified']; ?>
+				&nbsp;
+			</dd>
+			<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Last Logged In'); ?></dt>
+			<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
+				<?php echo $user[$model]['last_login']; ?>
+				&nbsp;
+			</dd>
+			<?php
+			if (!empty($user['UserDetail'])) :
+				foreach ($user['UserDetail'] as $section => $details) :
+					foreach ($details as $field => $value) :
+						echo '<dt>' . $section . ' - ' . $field . '</dt>';
+						echo '<dd>' . $value . '</dd>';
+					endforeach;
+				endforeach;
+			endif;
+			?>
 </div>
+<?php echo $this->element('Users.Users/admin_sidebar'); ?>
