@@ -60,7 +60,7 @@
 		</dd>
 	</dl><br /><br />
 	<div class="submit">
-		<?php echo '<input type="submit" value="Back" onClick="window.location.href=\'' . $this->webroot . 'users/admin_index\'">' ?>
+		<?php echo '<input id="back-button" type="button" value="Back" onClick="window.location.href=\'' . $this->webroot . 'users/admin_index\'">' ?>
 	</div>
 </div>
 <?php echo $this->element('Users.Users/admin_sidebar'); ?>
