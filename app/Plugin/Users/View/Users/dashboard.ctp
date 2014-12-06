@@ -10,7 +10,8 @@
  */
 ?>
 <div class="users overview">
-	<h2><?php echo __d('users', 'Welcome'); ?> <?php echo $user[$model]['username']; ?></h2>
+	<div class="users view">
+		<h2><?php echo __d('users', 'Welcome'); ?> <?php echo $user[$model]['username']; ?></h2>
 		<dl><?php $i = 0; $class = ' class="altrow"';?>
 			<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Username'); ?></dt>
 			<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
@@ -37,6 +38,14 @@
 				<?php echo $user[$model]['last_login']; ?>
 				&nbsp;
 			</dd>
+			<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Role'); ?></dt>
+			<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
+				<?php echo $user[$model]['role']; ?>
+				&nbsp;
+			</dd>
+			<p><br />
+				<?php echo $this->Html->link(__d('users', 'User Management'), array('action' => 'admin_index')); ?>
+			</p>
 			<?php
 			if (!empty($user['UserDetail'])) :
 				foreach ($user['UserDetail'] as $section => $details) :
@@ -47,5 +56,7 @@
 				endforeach;
 			endif;
 			?>
+		</dl>
+	</div>
 </div>
 <?php echo $this->element('Users.Users/admin_sidebar'); ?>

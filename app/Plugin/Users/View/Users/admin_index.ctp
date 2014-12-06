@@ -65,6 +65,10 @@
 								}
 								else {
 									echo $this->Html->link(__d('users', 'View'), array('action' => 'view', $user[$model]['id']));
+									if ($this->Session->read('Auth.User.is_admin') || ($this->Session->check('Auth.User.role') 
+									  && ($this->Session->read('Auth.User.role') === 'admin' || $this->Session->read('Auth.User.role') === 'instructor'))) {
+									  echo $this->Html->link(__d('users', 'Edit'), array('action' => 'edit', $user[$model]['id']));
+									}
 								}
 					?>
 				</td>

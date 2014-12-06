@@ -10,9 +10,10 @@
 			<li><?php echo $this->Html->link(__d('users', 'My Account'), array('plugin' => 'users', 'controller' => 'users', 'action' => 'edit', $this->Session->read('Auth.User.id'))); ?>
 			<li><?php echo $this->Html->link(__d('users', 'Change password'), array('plugin' => 'users', 'controller' => 'users', 'action' => 'change_password')); ?>
 		<?php endif ?>
-		<?php //if($this->Session->read('Auth.User.is_admin')) : ?>
+		<?php if ($this->Session->read('Auth.User.id')) : ?>
 			<li>&nbsp;</li>
-			<li><?php echo $this->Html->link(__d('users', 'List Users'), array('plugin' => 'users', 'controller' => 'users', 'action' => 'admin_index'));?></li>
-		<?php //endif; ?>
+			<li><?php echo $this->Html->link(__d('users', 'List Users'), array('plugin' => 'users', 'controller' => 'users', 'action' => 'admin_index')); ?></li>
+      <li><?php echo $this->Html->link(__d('users', 'Dashboard'), array('admin' => false, 'action'=>'dashboard')); ?></li>
+		<?php endif; ?>
 	</ul>
 </div>

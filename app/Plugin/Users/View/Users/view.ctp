@@ -37,6 +37,11 @@
 			<?php echo $user[$model]['last_login']; ?>
 			&nbsp;
 		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class; ?>><?php echo __d('users', 'Role'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class; ?>>
+			<?php echo $user[$model]['role']; ?>
+			&nbsp;
+		</dd>
 		<?php
 		if (!empty($user['UserDetail'])) :
 			foreach ($user['UserDetail'] as $section => $details) :

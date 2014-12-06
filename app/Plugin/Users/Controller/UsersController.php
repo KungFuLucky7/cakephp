@@ -260,7 +260,7 @@ class UsersController extends UsersAppController {
 			)
 		);
 
-		$this->Auth->loginRedirect = '/';
+		$this->Auth->loginRedirect = '/users/dashboard';   
 		$this->Auth->logoutRedirect = array('plugin' => Inflector::underscore($this->plugin), 'controller' => 'users', 'action' => 'login');
 		$this->Auth->loginAction = array('admin' => false, 'plugin' => Inflector::underscore($this->plugin), 'controller' => 'users', 'action' => 'login');
 	}
@@ -314,14 +314,14 @@ class UsersController extends UsersAppController {
 			$result = $this->{$this->modelClass}->edit($userId, $this->request->data);
 			if ($result === true) {
 				$this->Session->setFlash(__d('users', 'User saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('action' => 'admin_index'));
 			} else {
 				unset($result[$this->modelClass]['password']);
 				$this->request->data = $result;
 			}
 		} catch (OutOfBoundsException $e) {
 			$this->Session->setFlash($e->getMessage());
-			$this->redirect(array('action' => 'index'));
+			$this->redirect(array('action' => 'admin_index'));
 		}
 		
 		if (empty($this->request->data)) {
@@ -401,14 +401,14 @@ class UsersController extends UsersAppController {
 			$result = $this->{$this->modelClass}->edit($userId, $this->request->data);
 			if ($result === true) {
 				$this->Session->setFlash(__d('users', 'User saved'));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('action' => 'admin_index'));
 			} else {
 				unset($result[$this->modelClass]['password']);
 				$this->request->data = $result;
 			}
 		} catch (OutOfBoundsException $e) {
 			$this->Session->setFlash($e->getMessage());
-			$this->redirect(array('action' => 'index'));
+			$this->redirect(array('action' => 'admin_index'));
 		}
 
 		if (empty($this->request->data)) {
