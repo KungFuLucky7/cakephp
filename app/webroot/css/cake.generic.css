@@ -353,7 +353,8 @@ input[type=radio] {
 	margin: 0 0 6px 20px;
 	line-height: 26px;
 }
-input[type=submit] {
+input[type=submit],
+input[type=button] {
 	display: inline;
 	font-size: 110%;
 	width: auto;
@@ -755,8 +756,7 @@ form div.submit {
 }
 
 #back-button {
-  height: 36px;
-  width: 76px;
+  padding: 8px 10px;
 }
 
 #login-title {
