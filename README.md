@@ -2,6 +2,8 @@
 
 [Author](https://github.com/KungFuLucky7) - Terry C. Wong
 
+[Description](https://github.com/KungFuLucky7/sfsu_cakephp) - The author has successfully developed the User Management Web Application using the CakePHP web application framework and the CakeDC / users Users Plugin. The User Management Web Application has the functionalities for registering, viewing, adding, editing and deleting users. The User Management Web App supports various user classes/roles such that each user class/role has its own permissions settings and layouts on various pages. Overall, the User Management Web App has met all the requirements of the CSC 899 project and the author will continue to maintain the software product and support its further development.
+
 [CakeDC / users](https://github.com/CakeDC/users) - The project uses CakeDC/users, the Users Plugin for CakePHP
 
 
